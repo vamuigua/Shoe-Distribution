@@ -56,7 +56,7 @@ Navigate to the following link ```$ localhost:4567```
 
 Run ```$ rspec ``` in the terminal
 
-##Technologies Used
+## Technologies Used
 
 * Sinatra
 * AciveRecord
