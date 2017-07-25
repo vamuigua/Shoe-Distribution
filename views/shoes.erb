@@ -1,0 +1,14 @@
+<div class="shoe-card">
+	<% if @shoes.any? %>
+	<% @shoes.each do |shoe| %>
+	<ul>
+		<li><a href="/shoe/<%= shoe.id %>"><%= shoe.name %></a></li>
+	</ul>
+	<% end %>
+	<% else %>
+	<p>Sorry...No Shoes YET :(</p>
+	<button class="btn waves-effect waves-light" type="submit" name="action">Add Shoe
+	<i class="material-icons right">send</i>
+	</button>
+	<% end %>
+</div>
