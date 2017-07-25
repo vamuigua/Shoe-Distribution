@@ -1,4 +1,4 @@
 class Shoe < ActiveRecord::Base
-  has_many :details
-  has_many :stores, through: :details
+  belongs_to :brand
+  belongs_to :store
 end

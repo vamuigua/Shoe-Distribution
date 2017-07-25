@@ -1,4 +1,4 @@
 class Store < ActiveRecord::Base
-  has_many :details
-  has_many :shoes, through: :details
+  has_many :shoes
+  has_many :brands, through: :shoes
 end
