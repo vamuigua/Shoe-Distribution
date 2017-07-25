@@ -1,6 +1,8 @@
 # Shoe-ME! 👞 👠 👟
 A Ruby Web App that is used to track shoe brands and what stores they are in
 
+![alt text](/public/images/screenshot.png)
+
 ## User-Stories
 
 * As a user, I want to be able to add, update, delete and list shoe stores.
