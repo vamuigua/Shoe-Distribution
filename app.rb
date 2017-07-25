@@ -9,3 +9,21 @@ Dir[File.dirname(__FILE__) + '/lib/*.rb'].each { |file| require file }
 get('/') do
   erb(:index)
 end
+
+####### BRANDS ROUTE #######
+get('/brands') do
+  @brands = Brand.all
+  erb(:brands)
+end
+
+####### SHOE ROUTE #######
+get('/shoes') do
+  @shoes = Shoe.all
+  erb(:shoes)
+end
+
+####### STORES ROUTE #######
+get('/stores') do
+  @stores = Store.all
+  erb(:stores)
+end
