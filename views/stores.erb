@@ -1,0 +1,14 @@
+<div class="store-card">
+	<% if @stores.any? %>
+	<% @stores.each do |store| %>
+	<ul>
+		<li><a href="/store/<%= store.id %>"><%= store.name %></a></li>
+	</ul>
+	<% end %>
+	<% else %>
+	<p>Sorry...No stores YET :(</p>
+	<button class="btn waves-effect waves-light" type="submit" name="action">Add store
+	<i class="material-icons right">send</i>
+	</button>
+	<% end %>
+</div>
