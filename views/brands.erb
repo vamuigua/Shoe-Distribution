@@ -1,0 +1,14 @@
+<div class="brand-card">
+	<% if @brands.any? %>
+	<% @brands.each do |brand| %>
+	<ul>
+		<li><a href="/brand/<%= brand.id %>"><%= brand.name %></a></li>
+	</ul>
+	<% end %>
+	<% else %>
+	<p>Sorry...No brands YET :(</p>
+	<button class="btn waves-effect waves-light" type="submit" name="action">Add brand
+	<i class="material-icons right">send</i>
+	</button>
+	<% end %>
+</div>
