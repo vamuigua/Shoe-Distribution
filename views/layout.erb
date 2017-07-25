@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Shoe House</title>
+		<title>Shoe ME!</title>
+		<link rel="icon" type="image/png" href="images/logo2.png">
 		<!--Google Fonts-->
 		<!-- Compiled and minified CSS -->
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/css/materialize.min.css">
 		<!-- Custom CSS -->
-		<link rel="stylesheet" href="css/styles.css">
+		<link rel="stylesheet" href="styles.css">
 		<!--Import Google Icon Font-->
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 		<!--Import materialize.css-->
@@ -17,6 +18,17 @@
 		<meta  name="viewport" content="width=device-width, initial-scale=1.0"/>
 	</head>
 	<body>
+		<div class="navbar-fixed">
+			<nav>
+				<div class="nav-wrapper  blue darken-4">
+					<a href="/" class="brand-logo"><img src="/images/logo2.png" class="responsive-img" style="width:70px"></a>
+					<ul class="right hide-on-med-and-down">
+						<li><a href="sass.html">Stores</a></li>
+						<li><a href="badges.html">Shoes</a></li>
+					</ul>
+				</div>
+			</nav>
+		</div>
 		<div class="container">
 			<%= yield %>
 		</div>
