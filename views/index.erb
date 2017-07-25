@@ -2,43 +2,49 @@
 	<h1>Shoe ME!</h1>
 	<div class="row">
 		<!--ADD STORE FORM-->
-		<div class="col s12 m4 l4" style="text-align: center;"><h4>STORES</h4><hr>
-			<div class="input-field">
-				<input id="name" type="text" class="validate">
-				<label for="name">Store Name</label>
+		<form action="/stores" method="post">
+			<div class="col s12 m4 l4" style="text-align: center;"><h4>STORES</h4><hr>
+				<div class="input-field">
+					<input id="name" type="text" class="validate">
+					<label for="name">Store Name</label>
+				</div>
+				<div class="input-field">
+					<input id="location" type="text" class="validate">
+					<label for="location">Location</label>
+				</div>
+				<div class="input-field">
+					<input id="contact" type="text" class="validate">
+					<label for="contact">Contact</label>
+				</div>
+				<button class="btn waves-effect waves-light" type="submit" name="action">Add Store
+				<i class="material-icons right">send</i>
+				</button>
 			</div>
-			<div class="input-field">
-				<input id="location" type="text" class="validate">
-				<label for="location">Location</label>
-			</div>
-			<div class="input-field">
-				<input id="contact" type="text" class="validate">
-				<label for="contact">Contact</label>
-			</div>
-			<button class="btn waves-effect waves-light" type="submit" name="action">Add Store
-			<i class="material-icons right">send</i>
-			</button>
-		</div>
+		</form>
 		<!--ADD SHOE BRAND-->
-		<div class="col s12 m4 l4" style="text-align: center;"><h4>BRANDS</h4><hr>
-			<div class="input-field">
-				<input id="name" type="text" class="validate">
-				<label for="name">Shoe Brand</label>
+		<form action="/brands" method="post">
+			<div class="col s12 m4 l4" style="text-align: center;"><h4>BRANDS</h4><hr>
+				<div class="input-field">
+					<input id="name" type="text" class="validate">
+					<label for="name">Shoe Brand</label>
+				</div>
+				<button class="btn waves-effect waves-light" type="submit" name="action">Add Brand
+				<i class="material-icons right">send</i>
+				</button>
 			</div>
-			<button class="btn waves-effect waves-light" type="submit" name="action">Add Brand
-			<i class="material-icons right">send</i>
-			</button>
-		</div>
+		</form>
 		<!--ADD NEW SHOE-->
-		<div class="col s12 m4 l4" style="text-align: center;"><h4>SHOES</h4><hr>
-			<div class="input-field">
-				<input id="name" type="text" class="validate">
-				<label for="name">Shoe Name</label>
+		<form action="/shoes" method="post">
+			<div class="col s12 m4 l4" style="text-align: center;"><h4>SHOES</h4><hr>
+				<div class="input-field">
+					<input id="name" type="text" class="validate">
+					<label for="name">Shoe Name</label>
+				</div>
+				<button class="btn waves-effect waves-light" type="submit" name="action">Add Shoe
+				<i class="material-icons right">send</i>
+				</button>
 			</div>
-			<button class="btn waves-effect waves-light" type="submit" name="action">Add Shoe
-			<i class="material-icons right">send</i>
-			</button>
-		</div>
+		</form>
 	</div>
 </div>
 </div>
