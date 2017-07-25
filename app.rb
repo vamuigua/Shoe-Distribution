@@ -1,29 +1,81 @@
 #used bundler to require all gems
 require("bundler/setup")
-#__FILE__ refers to the current file, and File.dirname(__FILE__) will give the current directory
 Bundler.require(:default)
+also_reload("lib/**/*.rb")
+#__FILE__ refers to the current file, and File.dirname(__FILE__) will give the current directory
 Dir[File.dirname(__FILE__) + '/lib/*.rb'].each { |file| require file }
-
-
 ####### INDEX ROUTE ########
 get('/') do
   erb(:index)
 end
 
-####### BRANDS ROUTE #######
+####### GET STORES ROUTE #######
+get('/stores') do
+  @stores = Store.all
+  erb(:stores)
+end
+
+##### GET STORE'S SPECIFIC ID#####
+get('/stores/:id') do
+  @store = Store.find(params.fetch("id").to_i)
+  erb(:store)
+end
+
+####### POST STORES ROUTE #######
+post('/stores') do
+  name = params.fetch("name")
+  location = params.fetch("location")
+  contact = params.fetch("contact")
+  store = Store.new({:name => name,:location => location,:contact => contact})
+  if store.save()
+    redirect '/stores'
+  else
+    redirect '/error'
+  end
+end
+
+####### GET BRANDS ROUTE #######
 get('/brands') do
   @brands = Brand.all
   erb(:brands)
 end
 
-####### SHOE ROUTE #######
+##### GET BRAND'S SPECIFIC ID#####
+get('/brands/:id') do
+  @brand = Brand.find(params.fetch("id").to_i)
+  erb(:brand)
+end
+
+####### POST BRANDS ROUTE #######
+post('/brands') do
+  name = params.fetch("name")
+  brand = Brand.new({:name => name})
+  if brand.save()
+    redirect '/brands'
+  else
+    redirect '/error'
+  end
+end
+
+####### GET SHOE ROUTE #######
 get('/shoes') do
   @shoes = Shoe.all
   erb(:shoes)
 end
 
-####### STORES ROUTE #######
-get('/stores') do
-  @stores = Store.all
-  erb(:stores)
+##### GET SHOE'S SPECIFIC ID#####
+get('/shoes/:id') do
+  @shoe = Shoe.find(params.fetch("id").to_i)
+  erb(:shoe)
+end
+
+####### POST SHOES ROUTE #######
+post('/shoes') do
+  name = params.fetch("name")
+  shoe = Shoe.new({:name => name})
+  if shoe.save()
+    redirect '/shoes'
+  else
+    redirect '/error'
+  end
 end
