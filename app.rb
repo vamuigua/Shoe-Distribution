@@ -16,8 +16,10 @@ get('/stores') do
 end
 
 ##### GET STORE'S SPECIFIC ID#####
-get('/stores/:id') do
+get('/store/:id') do
   @store = Store.find(params.fetch("id").to_i)
+  @shoes = Shoe.all
+  @brands = Brand.all
   erb(:store)
 end
 
