@@ -1,0 +1,12 @@
+<h1><%= @store.name() %></h1>
+<p><a href="/stores/<%= @store.id() %>/edit">Edit <%= @store.name() %> details</a></p>
+<% if @store.shoes().any?() %>
+<h3>Here are all the shoes for this store:</h3>
+<ul>
+  <% @store.shoes().each() do |shoe| %>
+  <li><%= shoe.name() %> </li>
+  <% end %>
+</ul>
+<% else %>
+<p>There are no shoes on this store! </p>
+<% end %>
