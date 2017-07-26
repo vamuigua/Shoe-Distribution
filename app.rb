@@ -36,6 +36,27 @@ post('/stores') do
   end
 end
 
+###### ROUTE TO EDIT FORM STORE ################
+get('/stores/:id/edit') do
+  @store = Store.find(params.fetch("id").to_i)
+  erb(:store_edit)
+end
+
+######### UPDATE STORE DETAILS ##############
+patch('/stores/:id') do
+  @store = Store.find(params.fetch("id").to_i)
+  @store.update(name: params.fetch("name"))
+  erb(:store)
+end
+
+########  DELETE STORES ##########
+delete('/stores/:id') do
+  @stores = Store.all
+  @store = Store.find(params.fetch("id").to_i)
+  @store.destroy
+  erb(:stores)
+end
+
 ####### GET BRANDS ROUTE #######
 get('/brands') do
   @brands = Brand.all
